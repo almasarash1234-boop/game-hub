@@ -2,77 +2,85 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAME HUB | ثبت نام</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GAME HUB</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-    <h1>GAME HUB</h1>
-    <p>CALL OF DUTY MOBILE TOURNAMENTS</p>
+  <div class="logo">GAME <span>HUB</span></div>
+  <div class="user-area">
+    <input id="username" placeholder="نام کاربری">
+    <button onclick="saveUser()">ثبت نام کاربری</button>
+  </div>
+  <p id="userCode"></p>
 </header>
 
 <main>
-    <div class="register-box">
+  <section class="hero">
+    <p class="tag">CALL OF DUTY MOBILE</p>
+    <h1>به دنیای رقابت خوش آمدی</h1>
+    <p>رقابت کن، پیروز شو و جایزه بگیر!</p>
+  </section>
 
-        <h2>ساخت حساب کاربری</h2>
-        <p class="subtitle">به خانواده GAME HUB خوش آمدی</p>
-
-        <form id="registerForm">
-
-            <h3>👤 اطلاعات شخصی</h3>
-
-            <label>نام و نام خانوادگی</label>
-            <input type="text" placeholder="نام کامل" required>
-
-            <h3>🔐 اطلاعات حساب کاربری</h3>
-
-            <label>شماره موبایل</label>
-            <input type="tel" placeholder="شماره موبایل" required>
-
-            <label>رمز عبور</label>
-            <input type="password" placeholder="رمز عبور" required>
-
-            <label>تکرار رمز عبور</label>
-            <input type="password" placeholder="تکرار رمز عبور" required>
-
-            <h3>🎮 اطلاعات بازی</h3>
-
-            <label>آیدی کالاف (UID)</label>
-            <input type="text" placeholder="UID بازی" required>
-
-            <label>نام داخل بازی</label>
-            <input type="text" placeholder="Gamer Name" required>
-
-            <h3>🏆 اطلاعات مسابقه</h3>
-
-            <label>نوع مسابقه</label>
-            <select id="matchType" required>
-                <option value="">انتخاب مسابقه</option>
-                <option value="solo">انفرادی</option>
-                <option value="team">تیمی</option>
-            </select>
-
-            <label>نام تیم (برای مسابقه تیمی)</label>
-            <input type="text" placeholder="نام تیم">
-
-            <button type="submit">ایجاد حساب کاربری</button>
-
-        </form>
+  <h2>انتخاب مسابقه</h2>
+  <section class="cards">
+    <div class="card">
+      <h3>مسابقه انفرادی</h3>
+      <p>به تنهایی وارد میدان شو و رقابت کن.</p>
+      <button>مشاهده مسابقات</button>
     </div>
+
+    <div class="card">
+      <h3>مسابقه تیمی</h3>
+      <p>با دوستانت تیم بساز و رقابت کن.</p>
+      <button>مشاهده مسابقات</button>
+    </div>
+  </section>
+
+  <h2>مسابقات فعال</h2>
+  <section class="active">
+    <p>هنوز مسابقه‌ای ثبت نشده است.</p>
+  </section>
 </main>
 
-<footer>
-    GAME HUB © 2026
-</footer>
+<footer>GAME HUB | دنیای رقابت</footer>
 
 <script>
-document.getElementById("registerForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    alert("ظاهر فرم آماده است! ثبت‌نام واقعی در مرحله بعد فعال می‌شود.");
-});
+function saveUser() {
+  const input = document.getElementById("username");
+  const name = input.value.trim();
+
+  if (!name) {
+    alert("لطفاً نام کاربری را وارد کن.");
+    return;
+  }
+
+  let code = localStorage.getItem("gameHubCode");
+
+  if (!code) {
+    code = "GH-" + Math.floor(100000 + Math.random() * 900000);
+    localStorage.setItem("gameHubCode", code);
+  }
+
+  localStorage.setItem("gameHubUsername", name);
+  showUser();
+}
+
+function showUser() {
+  const name = localStorage.getItem("gameHubUsername");
+  const code = localStorage.getItem("gameHubCode");
+
+  if (name && code) {
+    document.getElementById("username").value = name;
+    document.getElementById("userCode").textContent =
+      "سلام " + name + " | کد کاربری: " + code;
+  }
+}
+
+showUser();
 </script>
 
 </body>
