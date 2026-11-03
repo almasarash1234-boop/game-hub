@@ -4,54 +4,145 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GAME HUB</title>
+  <title>GAME HUB | مسابقات کالاف دیوتی</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <div class="logo">GAME <span>HUB</span></div>
-  <div class="user-area">
-    <input id="username" placeholder="نام کاربری">
-    <button onclick="saveUser()">ثبت نام کاربری</button>
-  </div>
-  <p id="userCode"></p>
+<header class="navbar">
+  <a class="logo" href="#">GAME<span>HUB</span></a>
+
+  <nav>
+    <a href="#home">خانه</a>
+    <a href="#tournaments">مسابقات</a>
+    <a href="#features">امکانات</a>
+    <a href="#ranking">برترین بازیکنان</a>
+  </nav>
+
+  <button class="login-btn" onclick="openProfile()">حساب کاربری</button>
 </header>
 
 <main>
-  <section class="hero">
-    <p class="tag">CALL OF DUTY MOBILE</p>
-    <h1>به دنیای رقابت خوش آمدی</h1>
-    <p>رقابت کن، پیروز شو و جایزه بگیر!</p>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <span class="small-title">CALL OF DUTY MOBILE</span>
+      <h1>قهرمان میدان<br><span>تو هستی!</span></h1>
+      <p>وارد رقابت شو، مهارتت رو نشون بده و به جمع بهترین بازیکنان بپیوند.</p>
+      <a href="#tournaments" class="main-btn">مشاهده مسابقات</a>
+    </div>
+    <div class="hero-art">🎮</div>
   </section>
 
-  <h2>انتخاب مسابقه</h2>
-  <section class="cards">
-    <div class="card">
-      <h3>مسابقه انفرادی</h3>
-      <p>به تنهایی وارد میدان شو و رقابت کن.</p>
-      <button>مشاهده مسابقات</button>
+  <section class="stats">
+    <div><strong>GAME HUB</strong><span>پلتفرم مسابقات</span></div>
+    <div><strong>۲۴/۷</strong><span>دسترسی به مسابقات</span></div>
+    <div><strong>SOLO / TEAM</strong><span>حالت‌های رقابت</span></div>
+  </section>
+
+  <section id="tournaments" class="section">
+    <div class="section-heading">
+      <div>
+        <span class="small-title">COMPETITIONS</span>
+        <h2>مسابقات هیجان‌انگیز</h2>
+      </div>
+      <span class="live">● مسابقات</span>
     </div>
 
-    <div class="card">
-      <h3>مسابقه تیمی</h3>
-      <p>با دوستانت تیم بساز و رقابت کن.</p>
-      <button>مشاهده مسابقات</button>
+    <div class="tournament-grid">
+      <article class="tournament-card">
+        <div class="game-image solo-image">
+          <span>SOLO</span>
+        </div>
+        <div class="card-content">
+          <h3>مسابقه انفرادی</h3>
+          <p>به تنهایی وارد میدان شو و برای قهرمانی بجنگ.</p>
+          <div class="card-info">
+            <span>👤 تک‌نفره</span>
+            <span>🎯 رقابت انفرادی</span>
+          </div>
+          <button onclick="alert('مسابقات انفرادی به‌زودی فعال می‌شوند.')">مشاهده مسابقات</button>
+        </div>
+      </article>
+
+      <article class="tournament-card">
+        <div class="game-image team-image">
+          <span>TEAM</span>
+        </div>
+        <div class="card-content">
+          <h3>مسابقه تیمی</h3>
+          <p>با دوستانت تیم بساز و برای پیروزی رقابت کن.</p>
+          <div class="card-info">
+            <span>👥 تیمی</span>
+            <span>⚔️ رقابت گروهی</span>
+          </div>
+          <button onclick="alert('مسابقات تیمی به‌زودی فعال می‌شوند.')">مشاهده مسابقات</button>
+        </div>
+      </article>
     </div>
   </section>
 
-  <h2>مسابقات فعال</h2>
-  <section class="active">
-    <p>هنوز مسابقه‌ای ثبت نشده است.</p>
+  <section class="features section" id="features">
+    <span class="small-title">WHY GAME HUB?</span>
+    <h2>چرا GAME HUB؟</h2>
+
+    <div class="feature-grid">
+      <div class="feature">
+        <span>🏆</span>
+        <h3>مسابقات حرفه‌ای</h3>
+        <p>رقابت در مسابقات انفرادی و تیمی.</p>
+      </div>
+      <div class="feature">
+        <span>🎮</span>
+        <h3>پروفایل اختصاصی</h3>
+        <p>دارای نام و کد مخصوص هر بازیکن.</p>
+      </div>
+      <div class="feature">
+        <span>⚡</span>
+        <h3>محیط سریع</h3>
+        <p>دسترسی راحت به بخش‌های سایت.</p>
+      </div>
+      <div class="feature">
+        <span>🥇</span>
+        <h3>جدول رتبه‌بندی</h3>
+        <p>مشاهده برترین بازیکنان.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ranking section" id="ranking">
+    <span class="small-title">TOP PLAYERS</span>
+    <h2>برترین بازیکنان</h2>
+    <div class="player-list">
+      <div class="player"><b>🥇</b><strong>Player One</strong><span>رتبه ۱</span></div>
+      <div class="player"><b>🥈</b><strong>Player Two</strong><span>رتبه ۲</span></div>
+      <div class="player"><b>🥉</b><strong>Player Three</strong><span>رتبه ۳</span></div>
+    </div>
+    <p class="note">این رتبه‌ها نمونه هستند و هنوز از اطلاعات واقعی بازیکنان دریافت نمی‌شوند.</p>
+  </section>
+
+  <section class="profile-box" id="profile">
+    <span class="small-title">PLAYER PROFILE</span>
+    <h2>پروفایل بازیکن</h2>
+    <p>برای ساخت کد اختصاصی، نام کاربری خودت رو وارد کن.</p>
+
+    <div class="profile-form">
+      <input id="username" type="text" placeholder="نام کاربری خود را وارد کنید">
+      <button onclick="saveUser()">ساخت پروفایل</button>
+    </div>
+
+    <div id="profile-result"></div>
   </section>
 </main>
 
-<footer>GAME HUB | دنیای رقابت</footer>
+<footer>
+  <h2>GAME<span>HUB</span></h2>
+  <p>دنیای رقابت بازیکنان کالاف دیوتی موبایل</p>
+  <small>© GAME HUB 2026</small>
+</footer>
 
 <script>
 function saveUser() {
-  const input = document.getElementById("username");
-  const name = input.value.trim();
+  const name = document.getElementById("username").value.trim();
 
   if (!name) {
     alert("لطفاً نام کاربری را وارد کن.");
@@ -75,9 +166,27 @@ function showUser() {
 
   if (name && code) {
     document.getElementById("username").value = name;
-    document.getElementById("userCode").textContent =
-      "سلام " + name + " | کد کاربری: " + code;
+    document.getElementById("profile-result").innerHTML =
+      "<div class='user-result'><h3>خوش آمدی " +
+      escapeHTML(name) +
+      "</h3><p>کد اختصاصی تو:</p><strong>" +
+      code + "</strong></div>";
   }
+}
+
+function escapeHTML(text) {
+  return text.replace(/[&<>"']/g, function(char) {
+    return {
+      "&": "&amp;", "<": "&lt;", ">": "&gt;",
+      '"': "&quot;", "'": "&#039;"
+    }[char];
+  });
+}
+
+function openProfile() {
+  document.getElementById("profile").scrollIntoView({
+    behavior: "smooth"
+  });
 }
 
 showUser();
