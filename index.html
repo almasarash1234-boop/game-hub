@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAME HUB | ثبت نام</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>GAME HUB</h1>
+    <p>CALL OF DUTY MOBILE TOURNAMENTS</p>
+</header>
+
+<main>
+    <div class="register-box">
+
+        <h2>ساخت حساب کاربری</h2>
+        <p class="subtitle">به خانواده GAME HUB خوش آمدی</p>
+
+        <form id="registerForm">
+
+            <h3>👤 اطلاعات شخصی</h3>
+
+            <label>نام و نام خانوادگی</label>
+            <input type="text" placeholder="نام کامل" required>
+
+            <h3>🔐 اطلاعات حساب کاربری</h3>
+
+            <label>شماره موبایل</label>
+            <input type="tel" placeholder="شماره موبایل" required>
+
+            <label>رمز عبور</label>
+            <input type="password" placeholder="رمز عبور" required>
+
+            <label>تکرار رمز عبور</label>
+            <input type="password" placeholder="تکرار رمز عبور" required>
+
+            <h3>🎮 اطلاعات بازی</h3>
+
+            <label>آیدی کالاف (UID)</label>
+            <input type="text" placeholder="UID بازی" required>
+
+            <label>نام داخل بازی</label>
+            <input type="text" placeholder="Gamer Name" required>
+
+            <h3>🏆 اطلاعات مسابقه</h3>
+
+            <label>نوع مسابقه</label>
+            <select id="matchType" required>
+                <option value="">انتخاب مسابقه</option>
+                <option value="solo">انفرادی</option>
+                <option value="team">تیمی</option>
+            </select>
+
+            <label>نام تیم (برای مسابقه تیمی)</label>
+            <input type="text" placeholder="نام تیم">
+
+            <button type="submit">ایجاد حساب کاربری</button>
+
+        </form>
+    </div>
+</main>
+
+<footer>
+    GAME HUB © 2026
+</footer>
+
+<script>
+document.getElementById("registerForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("ظاهر فرم آماده است! ثبت‌نام واقعی در مرحله بعد فعال می‌شود.");
+});
+</script>
+
+</body>
+</html>
